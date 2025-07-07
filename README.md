@@ -1,7 +1,6 @@
 # AI Invoice Analyzer
 
 A full-stack application that uses AI to extract key information from PDF invoices.
-![Screenshot 2025-07-07 212833](https://github.com/user-attachments/assets/6a9ed327-bc66-406f-9e2b-71df3cbd1c8b)
 
 ## Features
 
