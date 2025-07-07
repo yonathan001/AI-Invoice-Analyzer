@@ -77,10 +77,16 @@ def extract_with_regex(text):
     if len(dates) >= 2:
         result["due_date"] = dates[1]
     
-    # Try to find total amount
-    total_match = re.search(r'(?i)(?:total\s*amount|amount\s*due|balance\s*due|total)[\s:]*\$?\s*(\d{1,3}(?:,\d{3})*(?:\.\d{2})?)', text)
+    # Try to find total amount (supports ETB, Birr, or numbers with commas/decimals)
+    total_match = re.search(r'(?i)(?:total\s*amount|amount\s*due|balance\s*due|total|ጠቅላላ|ብር)[\s:]*[ETB\$]?\s*([\d,]+(?:\.\d{2})?)', text)
     if total_match:
-        result["total_amount"] = f"${total_match.group(1)}"
+        # Format the number with ETB and proper thousand separators
+        amount = total_match.group(1).replace(',', '')
+        try:
+            formatted_amount = "{:,.2f}".format(float(amount))
+            result["total_amount"] = f"ETB {formatted_amount}"
+        except ValueError:
+            result["total_amount"] = f"ETB {amount}"
     
     return result
 

@@ -113,10 +113,10 @@ function App() {
               </div>
             ) : (
               <div className="result-details">
-                <div className="result-row">
+                {/* <div className="result-row">
                   <span className="result-label">Vendor Name:</span>
                   <span className="result-value">{result.vendor_name || 'Not found'}</span>
-                </div>
+                </div> */}
                 <div className="result-row">
                   <span className="result-label">Invoice Number:</span>
                   <span className="result-value">{result.invoice_number || 'Not found'}</span>
