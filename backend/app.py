@@ -19,7 +19,7 @@ if not GEMINI_API_KEY:
     raise ValueError("GEMINI_API_KEY not found in .env file")
 
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-pro')
+model = genai.GenerativeModel('gemini-1.5-pro-latest')
 
 def extract_text_from_pdf(pdf_file):
     """Extract text from uploaded PDF file."""
@@ -46,7 +46,7 @@ def extract_invoice_data(text):
         If any field is not found, use null as the value.
         
         Invoice text:
-        """{text}"""
+        {text}
         """
         
         response = model.generate_content(prompt)

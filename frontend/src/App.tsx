@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
@@ -42,7 +42,7 @@ function App() {
     setResult(null);
 
     try {
-      const response = await axios.post('/analyze', formData, {
+      const response = await axios.post('/api/analyze', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -146,7 +146,7 @@ function App() {
         <p>AI Invoice Analyzer &copy; {new Date().getFullYear()}</p>
       </footer>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
