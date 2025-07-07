@@ -59,10 +59,7 @@ function App() {
 
   return (
     <div className="app">
-      <header className="app-header">
-        <h1>AI Invoice Analyzer</h1>
-        <p>Upload a PDF invoice to extract key information automatically</p>
-      </header>
+      
 
       <main className="app-content">
         <form onSubmit={handleSubmit} className="upload-form">
@@ -142,9 +139,7 @@ function App() {
         )}
       </main>
 
-      <footer className="app-footer">
-        <p>AI Invoice Analyzer &copy; {new Date().getFullYear()}</p>
-      </footer>
+      
     </div>
   )
 }
