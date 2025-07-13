@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import axios from 'axios';
 import './App.css';
+
+import axios from 'axios';
+import { useState } from 'react';
 
 interface InvoiceData {
   vendor_name?: string;
@@ -81,7 +82,7 @@ function App() {
             className="analyze-button"
             disabled={!file || isLoading}
           >
-            {isLoading ? 'Analyzing...' : 'Analyze Invoice'}
+            {isLoading ? 'Analyzing . . ' : 'Analyze Invoice'}
           </button>
         </form>
 
