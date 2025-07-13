@@ -125,10 +125,10 @@ def extract_invoice_data(text):
         if response_text.endswith('```'):
             response_text = response_text[:-3]
             
-        # Parse the JSON response
+      
         try:
             result = json.loads(response_text)
-            # Ensure all expected fields are present
+           
             expected_fields = ["vendor_name", "invoice_number", "invoice_date", "due_date", "total_amount"]
             for field in expected_fields:
                 if field not in result:
